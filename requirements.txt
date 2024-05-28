@@ -1,0 +1,11 @@
+git+https://github.com/carneirofc/mkdocs-overwrite-configs
+git+https://github.com/carneirofc/mkdocs-with-pdf
+mkdocs
+mkdocs-glightbox
+mkdocs-macros-plugin
+mkdocs-material
+mkdocs-material[imaging]
+mkdocs-minify-plugin
+mkdocs-monorepo-plugin
+mkdocs-redirects
+qrcode

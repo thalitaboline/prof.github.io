@@ -1,0 +1,109 @@
+site_name: "Curso Técnico em Segurança do Trabalho"
+site_description: &site_description >-
+  Olá, seja bem-vindo ao site da Professora Thalita Boline.
+  Aqui você encontrará informações sobre as disciplinas ministradas por mim e também sobre o meu trabalho como professora.
+
+site_author: "Thalita Medeiros Boline"
+
+copyright: "Copyright &copy; Thalita Medeiros Boline"
+
+repo_url: "https://github.com/thalitaboline/prof.github.io"
+repo_name: "thalitaboline/prof.github.io"
+
+nav:
+  - Introdução: index.md
+  - Disciplinas:
+    - "Informática Básica": '!include ./disciplinas/informatica-basica/mkdocs.yml'
+  - Blog: blog/index.md
+
+theme:
+  name: 'material'
+  language: 'pt-BR'
+  icon:
+    repo: fontawesome/brands/git-alt
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+  # When using techdocs-core plugin, the palette is not used https://github.com/backstage/mkdocs-techdocs-core/blob/main/src/core.py#L71
+  palette: &palette
+    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  favicon: 'assets/images/logo.png'
+  logo: 'assets/images/logo.png'
+  search: true
+  features:
+    - search.suggest
+    - search.share
+    - content.footnote.tooltips
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - footnotes
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  # https://github.com/backstage/mkdocs-techdocs-core
+  - techdocs-core
+  # https://squidfunk.github.io/mkdocs-material/plugins/blog/
+  - blog:
+      archive: true
+      archive_name: "Arquivo"
+      archive_toc: true
+      categories: true
+      categories_name: "Categorias"
+      categories_toc: true
+
+  # https://squidfunk.github.io/mkdocs-material/plugins/privacy/
+  - privacy
+  # https://squidfunk.github.io/mkdocs-material/plugins/optimize/
+  # - optimize:
+  # https://squidfunk.github.io/mkdocs-material/plugins/offline/
+  - offline
+  # https://squidfunk.github.io/mkdocs-material/plugins/search/
+  - search
+  # https://github.com/blueswen/mkdocs-glightbox
+  - glightbox
+  # https://mkdocs-macros-plugin.readthedocs.io/en/latest/
+  - macros
+  # https://github.com/byrnereese/mkdocs-minify-plugin
+  # - minify
+  # https://github.com/mkdocs/mkdocs-redirects
+  # - redirects
+  # https://squidfunk.github.io/mkdocs-material/plugins/social/
+  # - social
+  - overwrite-configs:
+      theme:
+        palette: *palette
